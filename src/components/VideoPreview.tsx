@@ -4,9 +4,9 @@ type VideoPreviewProps = {};
 
 const VideoPreview: FC<VideoPreviewProps> = () => {
   return (
-    <div className="grid grid-cols-[205px] grid-rows-[110px, auto]">
+    <div className="mx-3 my-5">
       {/* Video Image */}
-      <div className="relative grid-rows-[1/2] grid-cols-[1/2]">
+      <div className="relative bg-gray-100">
         <img src="https://picsum.photos/200" />
 
         {/* Video Timestamp */}

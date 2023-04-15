@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 
 const App: FC = () => {
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center">
+    <div className="w-full min-h-screen">
       <Routes>
         <Route path="/" element={<Home />}/>
       </Routes>

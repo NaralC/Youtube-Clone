@@ -1,5 +1,5 @@
 import { FC } from "react"
-import Content from "./Content"
+import Content from "../components/Content"
 
 type HomeProps = {}
 

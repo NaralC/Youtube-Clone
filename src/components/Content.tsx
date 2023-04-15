@@ -7,6 +7,9 @@ const Content: FC<ContentProps> = () => {
   return (
     <>
       <VideoGrid />
+      <VideoGrid />
+      <VideoGrid />
+      <VideoGrid />
     </>
   )
 }
