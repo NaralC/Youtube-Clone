@@ -1,10 +1,16 @@
-import './App.css'
+import { FC } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import Home from "./components/Home";
 
-function App() {
-
+const App: FC = () => {
   return (
-    <div className='text-red-500 text-5xl'>hello</div>
-  )
-}
+    <div className="w-full min-h-screen flex flex-col justify-center items-center">
+      <Routes>
+        <Route path="/" element={<Home />}/>
+      </Routes>
+    </div>
+  );
+};
 
-export default App
+export default App;
