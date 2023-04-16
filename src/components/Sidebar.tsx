@@ -30,24 +30,8 @@ const Sidebar: FC = () => {
     );
   };
 
-  const Header = (): JSX.Element => {
-    return (
-      <div className="flex items-center align-middle">
-        <div className="p-3">
-          <Menu />
-        </div>
-        <div className="flex text-xl font-semibold">
-          <Youtube className="m-2" color="red"/>
-          <span className="my-auto">Youtube</span>
-        </div>
-      </div>
-    );
-  };
-
   return (
-    <div className="fixed left-0 z-50 h-screen bg-gray-200 border-r-2 border-gray-300 w-52">
-      <Header />
-      <Divider />
+    <div className="absolute left-0 z-50 h-screen bg-gray-200 border-r-2 border-gray-300 w-52">
       <Item selected={true} label="Home" icon={<Home />} />
       <Item selected={false} label="Trending" icon={<Flame />} />
       <Item selected={false} label="Subscriptions" icon={<Youtube />} />
