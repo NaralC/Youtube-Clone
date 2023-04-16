@@ -11,7 +11,7 @@ const VideoGrid = () => {
   };
 
   return (
-    <div className="flex flex-wrap flex-col items-center justify-center ml-[15rem]">
+    <div className="flex flex-wrap flex-col items-center justify-center ml-[15rem] p-3">
       <Header title="Trending 🔥" />
       <div className="flex flex-wrap">
         <VideoPreview />

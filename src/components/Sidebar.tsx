@@ -37,7 +37,7 @@ const Sidebar: FC = () => {
           <Menu />
         </div>
         <div className="flex text-xl font-semibold">
-          <Youtube className="m-2" />
+          <Youtube className="m-2" color="red"/>
           <span className="my-auto">Youtube</span>
         </div>
       </div>
@@ -45,7 +45,7 @@ const Sidebar: FC = () => {
   };
 
   return (
-    <div className="fixed left-0 z-50 h-screen bg-gray-200 border-r-4 border-gray-300 w-52">
+    <div className="fixed left-0 z-50 h-screen bg-gray-200 border-r-2 border-gray-300 w-52">
       <Header />
       <Divider />
       <Item selected={true} label="Home" icon={<Home />} />
