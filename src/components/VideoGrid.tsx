@@ -1,24 +1,17 @@
+import Divider from "./Divider";
 import VideoPreview from "./VideoPreview";
 
 const VideoGrid = () => {
   const Header = ({ title }: { title: string }): JSX.Element => {
     return (
-      <div className="px-3 py-7">
-        <span className="font-bold text-xl">{title}</span>
+      <div className="w-full px-3 py-7">
+        <span className="text-xl font-bold text-left">{title}</span>
       </div>
     );
   };
 
-  const Divider = (): JSX.Element => {
-    return (
-      <>
-        <div className="border-2 border-gray-500 rounded-full mx-10"></div>
-      </>
-    );
-  };
-
   return (
-    <>
+    <div className="flex flex-wrap flex-col items-center justify-center ml-[15rem]">
       <Header title="Trending 🔥" />
       <div className="flex flex-wrap">
         <VideoPreview />
@@ -32,8 +25,10 @@ const VideoGrid = () => {
         <VideoPreview />
         <VideoPreview />
       </div>
-      <Divider />
-    </>
+      <div className="w-full">
+        <Divider />
+      </div>
+    </div>
   );
 };
 
