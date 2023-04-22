@@ -13,7 +13,6 @@ const Content: FC<ContentProps> = () => {
 
   const onCallBack = () => {
     setGridCount((prev) => prev + 1);
-    console.log("YOOOO")
   };
 
   return (
