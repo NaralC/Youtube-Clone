@@ -3,28 +3,27 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import TopNav from "./components/TopNav";
 import Home from "./pages/Home";
+import { getVideos } from "./store/api/api";
+import { connect } from "react-redux";
+import { IVideoState } from "./store/interfaces/IVideoState";
+import { YoutubeClientLoaded } from "./store/action-creators/action-creator";
 
-const App: FC = () => {
-  
+interface IApp {
+  isYoutubeClientLoaded: boolean,
+  setYoutubeClientLoaded: () => void;
+}
+
+const App: FC<IApp> = ({ isYoutubeClientLoaded, setYoutubeClientLoaded }) => {
+
+  console.log(isYoutubeClientLoaded);
+
   useEffect(() => {
     gapi.load("client", () => {
       gapi.client.setApiKey("AIzaSyCtnDA4VWhyrFPXquFNm9pu1oMA-qnxdwE");
       return gapi.client.load("youtube", "v3", () => {
-        return (gapi.client as any).youtube.videos
-          .list({
-            part: ["snippet", "statistics", "contentDetails"],
-            chart: "mostPopular",
-            regionCode: "gb",
-          })
-          .then(
-            (response: any) => {
-              // Handle the results here (response.result has the parsed body).
-              console.log("Response", response);
-            },
-            (err: any) => {
-              console.error("Execute error", err);
-            }
-          );
+        ;
+        setYoutubeClientLoaded();
+
       });
     });
   }, []);
@@ -39,4 +38,16 @@ const App: FC = () => {
   );
 };
 
-export default App;
+const mapStatesToProps = (state: IVideoState) => {
+  return {
+    isYoutubeClientLoaded: state.isYoutubeClientLoaded,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+  return {
+    setYouTubeClientLoaded: () => { dispatch(YoutubeClientLoaded); },
+  };
+};
+
+export default connect(mapStatesToProps, mapDispatchToProps)(App);
